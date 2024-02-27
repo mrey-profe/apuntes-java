@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Ejercicio11 {
     public static void main(String[] args) {
-        int intentos = 5;
+        final int INTENTOS = 5;
         int numero = (int) (Math.random() * 100) + 1;
         System.out.println("Adivina el número entre 1 y 100. Tienes " + intentos + " intentos.");
         boolean adivinado = false;
         Scanner teclado = new Scanner(System.in);
 
-        for (int i = 0; i < intentos && !adivinado; i++) {
+        for (int i = 0; i < INTENTOS && !adivinado; i++) {
             System.out.println("Introduce un número: ");
             int intento = teclado.nextInt();
             if (intento == numero) {
