@@ -9,10 +9,11 @@ public class Ejercicio1 {
         do {
             System.out.println("Introduce la nota del alumno: ");
             double nota = teclado.nextDouble();
+            teclado.nextLine(); //Elimina el \n
             suma += nota;
             contador++;
             System.out.println("¿Quieres introducir más notas? (s/n)");
-            respuesta = teclado.next();
+            respuesta = teclado.nextLine();
         } while (respuesta.equals("s"));
         System.out.println("La nota media del alumno es: " + suma / contador);
     }
