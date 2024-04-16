@@ -4,7 +4,7 @@ public class Ejercicio11 {
     public static void main(String[] args) {
         final int INTENTOS = 5;
         int numero = (int) (Math.random() * 100) + 1;
-        System.out.println("Adivina el número entre 1 y 100. Tienes " + intentos + " intentos.");
+        System.out.println("Adivina el número entre 1 y 100. Tienes " + INTENTOS + " intentos.");
         boolean adivinado = false;
         Scanner teclado = new Scanner(System.in);
 
