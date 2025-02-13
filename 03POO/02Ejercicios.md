@@ -119,7 +119,7 @@ Implementa unha clase chamada **Libro** que permita xestionar a información bá
 
 Crea unha clase principal que probe todas as funcionalidades implementadas na clase Libro, creando varios libros con diferentes datos e amosando a súa información.
 
-## Exercicio: Xestión do Tempo
+## Exercicio 7: Xestión do Tempo
 
 Implementa unha clase chamada **Hora** que permita representar e manipular instantes de tempo dixital coas seguintes características:
 
