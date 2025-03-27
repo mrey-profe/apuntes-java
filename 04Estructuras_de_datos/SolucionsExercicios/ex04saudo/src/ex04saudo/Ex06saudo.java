@@ -12,7 +12,9 @@ public class Ex06saudo {
         Scanner teclado = new Scanner(System.in);
         String presentacion = teclado.nextLine();
         while (!presentacion.equalsIgnoreCase("Acabou a festa")) {
-            String nome = presentacion.substring(4);
+            //String nome = presentacion.substring(4);
+            int indiceEspacio = presentacion.indexOf(" ");
+            String nome = presentacion.substring(indiceEspacio + 1);
             System.out.println("Ola, " + nome);
             presentacion = teclado.nextLine();
         }
