@@ -17,46 +17,46 @@ public class CifradoCesar {
      * adecuado
      */
     public static String cifrado(String mensaxeClaro, int desprazamento) {
-        String resultado = "";
+        StringBuilder resultado = new StringBuilder();
         if (desprazamento <= LONXITUDE_ALFABETO) {
             for (int i = 0; i < mensaxeClaro.length(); i++) {
                 char letra = mensaxeClaro.charAt(i);
                 if (letra >= 'A' && letra <= 'Z') {
-                    letra += desprazamento;
+                    letra += (char) desprazamento;
                     if (letra > 'Z') {
                         letra -= LONXITUDE_ALFABETO;
                     }
                 } else if (letra >= 'a' && letra <= 'z') {
-                    letra += desprazamento;
+                    letra += (char) desprazamento;
                     if (letra > 'z') {
                         letra -= LONXITUDE_ALFABETO;
                     }
                 }
-                resultado += letra;
+                resultado.append(letra);
             }
         }
-        return resultado;
+        return resultado.toString();
     }
     
     public static String descifrado(String mensaxeCifrada, int desprazamento) {
-        String resultado = "";
+        StringBuilder resultado = new StringBuilder();
         if (desprazamento <= LONXITUDE_ALFABETO) {
             for (int i = 0; i < mensaxeCifrada.length(); i++) {
                 char letra = mensaxeCifrada.charAt(i);
                 if (letra >= 'A' && letra <= 'Z') {
-                    letra -= desprazamento;
+                    letra -= (char) desprazamento;
                     if (letra < 'A') {
                         letra += LONXITUDE_ALFABETO;
                     }
                 } else if (letra >= 'a' && letra <= 'z') {
-                    letra -= desprazamento;
+                    letra -= (char) desprazamento;
                     if (letra < 'a') {
                         letra += LONXITUDE_ALFABETO;
                     }
                 }
-                resultado += letra;
+                resultado.append(letra);
             }
         }
-        return resultado;
+        return resultado.toString();
     }
 }
