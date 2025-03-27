@@ -10,5 +10,10 @@ public class Main {
         System.out.println(OperacionsCadeas.inverter("Blablabla"));
         System.out.println(OperacionsCadeas.substituirCaracteres("Blablabla", 'a', 'o'));
         System.out.println(OperacionsCadeas.contenSubcadea("La blanca casa", "cal"));
+        System.out.println(OperacionsCadeas.cambiarCapitalizacion("La blanca Casa"));
+        System.out.println(OperacionsCadeas.cambiarCapitalizacion2("La blanca Casa"));
+        System.out.println(OperacionsCadeas.ePalindromo("La blanca casa"));
+        System.out.println(OperacionsCadeas.ePalindromo("Dabale arroz, a la zorra el abad"));
+        System.out.println(OperacionsCadeas.siglas("La blanca casa"));
     }
 }

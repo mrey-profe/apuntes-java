@@ -77,6 +77,35 @@ public class OperacionsCadeas {
         return resultado;
     }
 
+    public static String cambiarCapitalizacion(String cadea) {
+        String resultado = "";
+        for (int i = 0; i < cadea.length(); i++) {
+            if (Character.isLowerCase(cadea.charAt(i))) {
+                resultado += Character.toUpperCase(cadea.charAt(i));
+            } else if (Character.isUpperCase(cadea.charAt(i))) {
+                resultado += Character.toLowerCase(cadea.charAt(i));
+            } else {
+                resultado += cadea.charAt(i);
+            }
+        }
+        return resultado;
+    }
+
+    //Versión con StringBuilder
+    public static String cambiarCapitalizacion2(String cadea) {
+        StringBuilder resultado = new StringBuilder();
+        for (int i = 0; i < cadea.length(); i++) {
+            if (Character.isLowerCase(cadea.charAt(i))) {
+                resultado.append(Character.toUpperCase(cadea.charAt(i)));
+            } else if (Character.isUpperCase(cadea.charAt(i))) {
+                resultado.append(Character.toLowerCase(cadea.charAt(i)));
+            } else {
+                resultado.append(cadea.charAt(i));
+            }
+        }
+        return resultado.toString();
+    }
+
     public static boolean contenSubcadea(String cadea, String subcadea) {
         for (int i = 0; i < cadea.length(); i++) {
             boolean coincide = true;
@@ -93,6 +122,24 @@ public class OperacionsCadeas {
         return false;
     }
 
+    public static boolean ePalindromo(String cadea) {
+        String cadeaSenEspazos = "";
+        for (int i = 0; i < cadea.length(); i++) {
+            if (!",.;¿?¡!' ".contains(Character.toString(cadea.charAt(i)))) {
+                cadeaSenEspazos += cadea.charAt(i); //Elimino espazos e signos de puntuación
+            }
+        }
+        return cadeaSenEspazos.equalsIgnoreCase(inverter(cadeaSenEspazos));
+    }
 
-    
+    public static String siglas(String cadea) {
+        String resultado = String.valueOf(Character.toUpperCase(cadea.charAt(0)));
+        // Meto o primeiro carácter en maiúsculas
+        for (int i = 1; i < cadea.length(); i++) {
+            if (cadea.charAt(i) != ' ' && cadea.charAt(i-1) == ' ') {
+                resultado += Character.toUpperCase(cadea.charAt(i));
+            }
+        }
+        return resultado;
+    }
 }
