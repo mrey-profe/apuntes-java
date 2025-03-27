@@ -105,7 +105,7 @@ Crea unha clase `Usuario` coas seguintes características:
   
 ### Construtor
 
-- Debe recibir o nome, os apelidos e o correo electrónico. Deberá crear o usuario do sistema (usando `crearUsuario()`) e o contrasinal de forma aleatoria co método `crearContrasinal()`.
+- Debe recibir o nome, os apelidos, o DNI e o correo electrónico. Deberá crear o usuario do sistema (usando `crearUsuario()`) e o contrasinal de forma aleatoria co método `crearContrasinal()`.
 
 ### Métodos
 
@@ -143,6 +143,7 @@ Crea unha clase `Vehiculo` coas seguintes características:
 
 - `matricular()`: Asigna unha matrícula ao vehículo. Debe modificar o atributo estático `últimaMatrícula` para que a seguinte matrícula sexa correcta.
 - `toString()`: Devolve unha cadea coa información do vehículo.
+- Métodos que permitan validar os atributos indicados.
 
 **PISTAS**: Emprega a clase `LocalDate` para obter o ano actual.
 
