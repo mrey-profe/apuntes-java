@@ -17,6 +17,19 @@ public class Poesia {
         return riman;
     }
 
+    public static boolean riman3LetrasAlternativa(String cadea1, String cadea2) {
+        boolean riman = false;
+        if (cadea1.length() < 3 || cadea2.length() < 3) { //Versos demasiado curtos
+            return false;
+        }
+        for (int i = 1; i < 4; i++) {
+            if (cadea1.charAt(cadea1.length() - i) != cadea2.charAt(cadea2.length() - i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static boolean rimanConsonante(String cadea1, String cadea2) {
         StringBuilder cadeaSB1 = new StringBuilder(cadea1.toLowerCase());
         StringBuilder cadeaSB2 = new StringBuilder(cadea2.toLowerCase());
