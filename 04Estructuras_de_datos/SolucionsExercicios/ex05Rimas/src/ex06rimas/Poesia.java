@@ -39,6 +39,7 @@ public class Poesia {
                     case 'u':
                         numVogais++;
                 }
+                //Podemos cambialo por "aeiou".contains(cadeaSB1.charAt(i))
             }
         }
         return riman;
