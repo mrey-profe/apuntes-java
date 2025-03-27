@@ -18,8 +18,8 @@ public class Poesia {
     }
 
     public static boolean rimanConsonante(String cadea1, String cadea2) {
-        StringBuffer cadeaSB1 = new StringBuffer(cadea1.toLowerCase());
-        StringBuffer cadeaSB2 = new StringBuffer(cadea2.toLowerCase());
+        StringBuilder cadeaSB1 = new StringBuilder(cadea1.toLowerCase());
+        StringBuilder cadeaSB2 = new StringBuilder(cadea2.toLowerCase());
         cadeaSB1.reverse();
         cadeaSB2.reverse();
 
@@ -46,8 +46,8 @@ public class Poesia {
     }
 
     public static boolean rimanAsonante(String cadea1, String cadea2) {
-        StringBuffer cadeaSB1 = new StringBuffer(cadea1.toLowerCase());
-        StringBuffer cadeaSB2 = new StringBuffer(cadea2.toLowerCase());
+        StringBuilder cadeaSB1 = new StringBuilder(cadea1.toLowerCase());
+        StringBuilder cadeaSB2 = new StringBuilder(cadea2.toLowerCase());
         cadeaSB1.reverse();
         cadeaSB2.reverse();
 
