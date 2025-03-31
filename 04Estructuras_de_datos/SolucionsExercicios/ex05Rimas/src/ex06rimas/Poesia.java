@@ -22,7 +22,7 @@ public class Poesia {
         if (cadea1.length() < 3 || cadea2.length() < 3) { //Versos demasiado curtos
             return false;
         }
-        for (int i = 1; i < 4; i++) {
+        for (int i = 1; i <= 3; i++) {
             if (cadea1.charAt(cadea1.length() - i) != cadea2.charAt(cadea2.length() - i)) {
                 return false;
             }
@@ -52,7 +52,7 @@ public class Poesia {
                     case 'u':
                         numVogais++;
                 }
-                //Podemos cambialo por "aeiou".contains(cadeaSB1.charAt(i))
+                //Podemos cambialo por "aeiou".contains(Character.toString(cadeaSB1.charAt(i)))
             }
         }
         return riman;

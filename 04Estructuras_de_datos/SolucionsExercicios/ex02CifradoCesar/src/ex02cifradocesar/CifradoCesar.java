@@ -6,7 +6,7 @@ package ex02cifradocesar;
  */
 public class CifradoCesar {
 
-    final static int LONXITUDE_ALFABETO = 'Z' - 'A' + 1;
+    private final static int LONXITUDE_ALFABETO = 'Z' - 'A' + 1;
 
     /**
      * Cifra unha cadea aplicando un desprazamento aos seus caracteres
@@ -58,5 +58,34 @@ public class CifradoCesar {
             }
         }
         return resultado.toString();
+    }
+
+    //Versión Álvaro
+    public static String  cifrarAlvaro ( String cadea, int posiciones) {
+        String abecedario = "abcdefghijklmnñopqrstuvwxyz ";
+        StringBuilder cadeaCifrada = new StringBuilder();
+        for (int i = 0; i < cadea.length(); i++) {
+            char letra = cadea.charAt(i);
+            if (abecedario.contains(Character.toString(letra))){
+                int posicion = abecedario.indexOf(letra);
+                cadeaCifrada.append(abecedario.charAt((posicion+posiciones)%28));
+            } else {
+                cadeaCifrada.append(letra);
+            }
+        }
+        return cadeaCifrada.toString();
+    }
+    public static String  descifrarAlvaro ( String cadea, int posiciones) {
+        String abecedario = " zyxwvutsrqpoñnmlkjihgfedcba";
+        StringBuilder cadeaDescifrada = new StringBuilder();
+        for (int i = 0; i < cadea.length(); i++) {
+            int posicion = abecedario.indexOf(cadea.charAt(i));
+            if (abecedario.contains(Character.toString(cadea.charAt(i)))) {
+                cadeaDescifrada.append(abecedario.charAt((posicion + posiciones) % 28));
+            } else {
+                cadeaDescifrada.append(cadea.charAt(i));
+            }
+        }
+        return cadeaDescifrada.toString();
     }
 }

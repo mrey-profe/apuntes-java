@@ -37,7 +37,7 @@ public class EAN8 {
             }*/
             resultado += (i % 2 == 0) ? dixito * 3 : dixito;
         }
-        int resto = resultado % 10;
+        int resto = resultado % 10; //Quédome coas unidades
         if (resto == 0) { //Divisible entre 10
             return 0;
         } else {
