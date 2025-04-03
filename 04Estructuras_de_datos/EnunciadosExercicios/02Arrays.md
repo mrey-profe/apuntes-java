@@ -10,21 +10,21 @@ Escribe un programa no que se definan dous arrays de 100 números enteiros, un c
 
 Inicializa o segundo cos 100 primeiros números impares positivos.
 
-## Exercicio 4: Meses do ano
+## Exercicio 3: Meses do ano
 
 Crea un programa con dous arrays constantes: un co nome dos meses en galego e, noutro, os meses do ano en inglés.
 
 Percorre os dous arrays e amosa a equivalencia entre os meses en galego e en inglés.
 
-## Exercicio 5: Devolución de arrays
+## Exercicio 4: Devolución de arrays
 
 Escribe un método que reciba un número enteiro `n` e devolva un array de `n` números aleatorios entre 1 e 100.
 
-## Exercicio 6: Paso de arrays como parámetros
+## Exercicio 5: Paso de arrays como parámetros
 
 Escribe un método que reciba dous arrays de números enteiros e devolva un array que conteña a suma dos elementos dos arrays recibidos. Debe comprobarse que os arrays teñen o mesmo tamaño.
 
-## Exercicio 7: Array bidimensional. Notas dun curso
+## Exercicio 6: Array bidimensional. Notas dun curso
 
 Deberase crear unha matriz coas notas de todo un curso. Cada fila representará ás notas dun alumno e cada columna representará as notas das materias. En total son 10 alumnos e cada un terá notas para as 8 materias das que se compón o curso.
 
@@ -40,7 +40,7 @@ A partir da información contida na matriz deberán realizarse os cálculos nece
 - Mostrar cal é a peor nota de todo o curso.
 - Indicar cantos alumnos teñen todas as materias aprobadas.
 
-## Exercicio 8: Array bidimensional de flores
+## Exercicio 7: Array bidimensional de flores
 
 Imos crear un xardín de flores programando en Java, nel queremos plantar rosas, xirasois, margaridas e tulipáns.
 
@@ -53,6 +53,7 @@ Por exemplo, se chamamos á función:
 ```Java
 xardinExemplo = crearXardin(5, 4)  
 ```
+
 Creará unha lista parecida a esta (é aleatoria, polo que non sempre será a mesma):  
 
 ```Java
