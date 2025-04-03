@@ -30,10 +30,11 @@ Deberase crear unha matriz coas notas de todo un curso. Cada fila representará 
 
 Inicializarase a matriz directamente coas notas obtidas en todo o curso.
 
-A partir da información contida na matriz deberán realizarse os cálculos necesarios para amosar a seguinte información:
+A partir da información contida na matriz deberán realizarse os cálculos necesarios para amosar a seguinte información (debes crear unha clase con métodos estáticos para cada unha das operacións):
 
-- Nota media de cada alumno.
 - Nota media de todo o curso.
+- Nota media de cada alumno.
+- Nota media de cada módulo.
 - Indicar cantas notas son superiores ou igual a 5 (aprobados en total)
 - Indicar cantas notas son inferiores a 5 (suspensos)
 - Mostrar cal é a mellor nota de todo o curso.
@@ -42,31 +43,28 @@ A partir da información contida na matriz deberán realizarse os cálculos nece
 
 ## Exercicio 7: Array bidimensional de flores
 
-Imos crear un xardín de flores programando en Java, nel queremos plantar rosas, xirasois, margaridas e tulipáns.
+Imos crear un xardín de flores programando en Java, nel queremos plantar rosas, xirasoles, margaridas e tulipáns.
 
-a. Crea unha función chamada `crearXardin`, á que se lle pase o ancho e o alto do xardín e o encha con esas flores de forma aleatoria. Debe devolver a lista bidimensional que representará o xardín plantado.
+### Clase `Flor`
 
-b. Crea outra función chamada `contarFlores` á que se lle pase unha lista bidimensional con flores e o nome dunha flor e devolva o número de flores dese tipo que están plantadas no xardín.
+Crearemos unha clase `Flor` que almacenará o tipo da flor e a súa cor. Terá ademais dous atributos estáticos e constantes que serán arrays cos tipos de flores e cores posibles.
 
-Por exemplo, se chamamos á función:  
+Debes comprobar que a flor que se está a crear é válida, é dicir, que o tipo e a cor están dentro dos arrays de tipos e cores. Emprega algún método da clase `Arrays` para saber se o tipo e a cor están dentro dos arrays de tipos e cores.
 
-```Java
-xardinExemplo = crearXardin(5, 4)  
+Terá un método `toString` que devolverá a flor en formato de texto.
+
+```text
+rosa de cor vermella
 ```
 
-Creará unha lista parecida a esta (é aleatoria, polo que non sempre será a mesma):  
+### Clase `Xardin`
 
-```Java
-["Tulipán", "Tulipán", "Tulipán", "Xirasol", "Margarida"]  
-["Tulipán", "Xirasol", "Rosa", "Tulipán", "Rosa"]  
-["Xirasol", "Rosa", "Xirasol", "Tulipán", "Xirasol"]  
-["Rosa", "Xirasol", "Xirasol", "Tulipán", "Xirasol"]  
-```
+A clase `Xardin` terá un só atributo: un array bidimensional de flores. Este array representará o xardín.
 
-Se agora contamos as rosas:  
+Ao construtor se lle pasará o ancho e o alto do xardín. Debe inicializarse aleatoriamente con flores (se empregarán as constantes da clase `Flor` para saber cales son os tipos de flores e cores posibles).
 
-```Java
-rosas = contarFlores(xardinExemplo, "Rosa")  
-```
+Terá un método `contarFlores` que reciba como parámetro un tipo de flor e devolva o número de flores dese tipo que hai no xardín.
 
-Devolverá 4.
+Terá un método `toString` que devolverá o xardín en formato de texto. Utiliza a clase `StringBuilder` para construír a cadea de texto resultante.
+
+Crea un `getter` que devolva o array de flores e proba a amosalo no programa principal empregando algún método da clase `Arrays`.
