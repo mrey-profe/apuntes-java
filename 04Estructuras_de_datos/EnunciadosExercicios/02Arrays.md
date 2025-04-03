@@ -20,11 +20,11 @@ Percorre os dous arrays e amosa a equivalencia entre os meses en galego e en ing
 
 Escribe un método que reciba un número enteiro `n` e devolva un array de `n` números aleatorios entre 1 e 100.
 
-## Exercicio 5: Paso de arrays como parámetros
+## Exercicio 6: Paso de arrays como parámetros
 
 Escribe un método que reciba dous arrays de números enteiros e devolva un array que conteña a suma dos elementos dos arrays recibidos. Debe comprobarse que os arrays teñen o mesmo tamaño.
 
-## Exercicio 6: Array bidimensional. Notas dun curso
+## Exercicio 7: Array bidimensional. Notas dun curso
 
 Deberase crear unha matriz coas notas de todo un curso. Cada fila representará ás notas dun alumno e cada columna representará as notas das materias. En total son 10 alumnos e cada un terá notas para as 8 materias das que se compón o curso.
 
@@ -40,7 +40,7 @@ A partir da información contida na matriz deberán realizarse os cálculos nece
 - Mostrar cal é a peor nota de todo o curso.
 - Indicar cantos alumnos teñen todas as materias aprobadas.
 
-## Exercicio 7: Array bidimensional de flores
+## Exercicio 8: Array bidimensional de flores
 
 Imos crear un xardín de flores programando en Java, nel queremos plantar rosas, xirasois, margaridas e tulipáns.
 
