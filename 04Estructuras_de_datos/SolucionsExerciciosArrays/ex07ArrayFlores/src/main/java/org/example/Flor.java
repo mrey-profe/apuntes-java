@@ -9,8 +9,12 @@ public class Flor {
     private static final String[] CORES = new String[]{"vermella", "rosa", "amarela", "branca"};
 
     public Flor(String tipo, String cor) {
-        this.tipo = tipo;
-        this.cor = cor;
+        if (comprobarNome(tipo)) {
+            this.tipo = tipo;
+        }
+        if (comprobarCor(tipo)) {
+            this.cor = cor;
+        }
     }
 
     private boolean comprobarNome(String nome) {
