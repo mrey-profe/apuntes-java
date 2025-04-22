@@ -37,11 +37,12 @@ Crea unha clase *Ramo* que teña os seguintes atributos:
 
 #### Métodos
 
-- Construtor que inicialice todos os atributos e un método que mostre a información do ramo.
+- Construtor que só reciba a persoa que encargou o ramo. O ramo inicialízase sen flores.
+- Construtor que inicialice todos os atributos.
 - Método que engada unha flor ao ramo.
 - Método que elimine flores do ramo. Pásaselle o tipo de flor, a súa cor e o número delas que se queren eliminar.
 - Método que calcule o prezo total do ramo.
-- Método que mostre a información de todo o ramo: que flores ten, cantas de cada unha, o prezo total e a persoa que o comprou.
+- Método que mostre a información de todo o ramo: que flores ten, o prezo total e a persoa que o comprou.
 
 ### Programa principal
 
@@ -56,6 +57,7 @@ Crea un programa que permita xestionar unha lista de viaxes organizadas e os via
 - Mostrar todos os destinos turísticos dispoñibles.
 - Listar os viaxeiros rexistrados para cada viaxe.
 - Eliminar unha viaxe (e os seus viaxeiros asociados).
+- Buscar viaxes por destino.
 - Buscar destinos por país.
 
 Pensa en que clases e atributos son necesarios para implementar o programa. Utiliza **ArrayList** para almacenar as viaxes e os viaxeiros. Implementa métodos para realizar as operacións solicitadas.
