@@ -1,8 +1,6 @@
 package gal.iesteis;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 public class Ramo {
     private HashMap<Flor, Integer> flores;
