@@ -32,7 +32,8 @@ public class OperacionsArrays {
     }
 
     public static double[] mediaAlumnado(double[][] notas) {
-        double[] medias = new double[notas.length];
+        int numAlumnado = notas.length;
+        double[] medias = new double[numAlumnado];
 
         for (int f = 0; f < notas.length; f++) { //Para cada un dos alumnos
             double suma = 0;
@@ -47,12 +48,12 @@ public class OperacionsArrays {
     public static double[] mediaModulos(double[][] notas) {
         double[] medias = new double[notas[0].length];
 
-        for (int c = 0; c < notas[0].length; c++) { //Para cada un dos módulos (todos os alumnos teñen o mesmo número de módulos)
+        for (int i = 0; i < notas[0].length; i++) { //Para cada un dos módulos (todos os alumnos teñen o mesmo número de módulos)
             double suma = 0;
-            for (int f = 0; f < notas.length; f++) { //Para cada un dos alumnos
-                suma += notas[f][c]; //Os índice póñense ao revés da orde dos bucles porque se percorre por columnas
+            for (int j = 0; j < notas.length; j++) { //Para cada un dos alumnos
+                suma += notas[j][i]; //Os índice póñense ao revés da orde dos bucles porque se percorre por columnas
             }
-            medias[c] = suma / notas.length;
+            medias[i] = suma / notas.length;
         }
         return medias;
     }

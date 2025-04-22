@@ -12,10 +12,19 @@ public class Xardin {
 
     private void plantarAleatoria(){
         Random random = new Random();
+        String[] tiposPosibles = Flor.getTIPOS();
+        String[] coresPosibles = Flor.getCORES();
+        int numTipos = tiposPosibles.length;
+        int numCores = coresPosibles.length;
         for (int i = 0; i < flores.length; i++) {
             for (int j = 0; j < flores[i].length; j++) {
-                String nome = Flor.getTIPOS()[random.nextInt(Flor.getTIPOS().length)];
-                String cor = Flor.getCORES()[random.nextInt(Flor.getCORES().length)];
+                int indiceTipos = random.nextInt(numTipos);
+                int indiceCores = random.nextInt(numCores);
+                String nome = tiposPosibles[indiceTipos];
+                String cor = coresPosibles[indiceCores];
+                //Equivale a:
+                // String nome = Flor.getTIPOS()[random.nextInt(Flor.getTIPOS().length)];
+                // String cor = Flor.getCORES()[random.nextInt(Flor.getCORES().length)];
                 flores[i][j] = new Flor(nome, cor);
             }
         }
@@ -35,10 +44,6 @@ public class Xardin {
 
     public Flor[][] getFlores() {
         return flores;
-    }
-
-    public void setFlores(Flor[][] flores) {
-        this.flores = flores;
     }
 
     public String toString() {
