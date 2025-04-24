@@ -57,20 +57,71 @@ Crea unha aplicación en Java que modele unha empresa con distintos tipos de tra
 
 Crea unha aplicación en Java que modele os socios do RC Celta de Vigo empregando herdanza. Segue as seguintes indicacións:
 
-1. Clase base: Socio
+### Clase `Celtista`
 
-Atributos privados:
+#### Atributos:
+- `numeroSocio`
+- `dataIngreso`
+- `nome`
+- `dataNacemento`
+- Atributo estático para almacenar os número de socios asignados.
+- Atributo constante e estático para almacenar o prezo do carné celtista nesa tempada.
 
-id (entero)
+#### Métodos:
+- Construtor para inicializar todos os atributos menos o número de socio, que se inicializa automaticamente e a data de ingreso, que se inicializa co día de hoxe.
+- *Getters* para os atributos que o precisen.
+- Método `equals(Object o)` que devolve `true` se dous celtistas teñen o mesmo número de socio.
+- Método `toString()` que devolve a información do celtista.
+- Método `calcularAntigüidade()` do celtista como un obxecto `Period` desde a data actual. Este método non pode ser sobreescrito nas subclases.
+- Método `calcularPagamento()` que devolve o que ten que pagar o celtista, que se corresponde do almacenado na constante estática.
+  
+### Clase `Abono`
 
-nome (String)
+#### Atributos:
+- `tipoAbono` ("Adulto", "Maiores65", "Sub30", "Sub25", "Sub15", "Infantil")
+- `grada` ("Tribuna alta", "Tribuna baixa", "Río alto", "Río baixo", "Marcador alto", "Grada de animación")
+- `prezoAbono` (prezo do abono segundo o tipo)
+- HashMap de HashMaps estático que asocia o tipo de abono co prezo correspondente. A clave do primeiro HashMap é a grada e a do segundo HashMap é o tipo de abono. O valor do segundo HashMap é o prezo do abono.
 
-dataNacemento (String ou LocalDate)
+### Métodos:
+- Construtor que inicializa todos os atributos menos o prezo do abono, que se inicializa automaticamente segundo o tipo de abono e a grada.
+- *Getters* para os atributos que o precisen.
+- Método `calcularPagamento()`, que sobreescribe ao da clase nai, que devolve o que ten que pagar o abonado segundo o tipo de abono, descontando o saldo acumulado.
+- Método `toString()` que devolve a información do abono.
 
-Métodos:
 
-Constructor para inicializar todos os atributos.
+### Clase `Abonado` (herda de `Celtista`)
 
-Métodos getter e setter.
+#### Atributos:
+  - `abono` (abono do abonado)
+  - `saldoAcumulado` (saldo acumulado do abonado pola cesión de asentos non utilizados)
 
-Método toString() para amosar a información do socio.
+#### Métodos:
+- Construtor que inicializa todos os atributos (desta clase e da súa clase nai) menos o saldo acumulado, que se inicializa a 0.
+- *Getters* para os atributos que o precisen.
+- Método `toString()` que devolve a información do abonado e do seu abono.
+
+### Clase `Miudiño` (herda de `Celtista`)
+
+#### Atributos:
+- `adultoAsociado` (adulto asociado ao miudiño, debe ser un abonado)
+
+#### Métodos:
+- Construtor que inicializa todos os atributos (desta clase e da súa clase nai).
+- Método `calcularPagamento()` que devolve sempre 0.
+
+### Clase `Equipo`
+#### Atributos:
+- `nome`
+- `anoFundacion`
+- `estadio`
+- `aforo`
+- ArrayList polimórfico de `Celtista` para almacenar os socios do equipo (sexan do tipo que sexan).
+- ArrayList de `Abono` para almacenar os abonos do equipo.
+
+#### Métodos:
+- Construtor que recibe o nome, ano de fundación, estadio e aforo. Inicializa os atributos e crea os ArrayList baleiros.
+- `engadirAbono(Abono abono)` que engade un abono á lista de abonos.
+- `engadirCeltista(Celtista celtista)` que engade un celtista á lista de socios.
+- Método `toString()` que devolve a información do equipo e dos seus socios.
+- Método `calcularTotalPagos()` que devolve o total que ten que pagar o equipo por todos os seus socios. Para isto, chama ao método `calcularPagamento()` de cada celtista.
