@@ -1,5 +1,7 @@
 package gal.iesteis;
 
+import java.util.Arrays;
+
 public class Flor {
     private String nome;
     private String cor;
@@ -23,12 +25,16 @@ public class Flor {
     }
 
     public boolean eCorCorrecta(String cor) {
-        for (String corValida : CORES) {
-            if (corValida.equalsIgnoreCase(cor)) {
-                return true;
-            }
-        }
-        return false;
+//        for (String corValida : CORES) {
+//            if (corValida.equalsIgnoreCase(cor)) {
+//                return true;
+//            }
+//        }
+//        return false;
+        //Alternativa
+        String coresCadea = Arrays.toString(CORES);
+        System.out.println(coresCadea);
+        return coresCadea.contains(cor.toLowerCase());
     }
 
     public boolean ePrezoCorrecto(double prezo) {
