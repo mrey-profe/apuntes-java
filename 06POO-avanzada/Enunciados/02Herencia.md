@@ -64,7 +64,7 @@ Crea unha aplicación en Java que modele os socios do RC Celta de Vigo empregand
 - `dataIngreso`
 - `nome`
 - `dataNacemento`
-- Atributo estático para almacenar os número de socios asignados.
+- Atributo estático para almacenar o último número de socio asignado.
 - Atributo constante e estático para almacenar o prezo do carné celtista nesa tempada.
 
 #### Métodos:
@@ -73,20 +73,81 @@ Crea unha aplicación en Java que modele os socios do RC Celta de Vigo empregand
 - Método `equals(Object o)` que devolve `true` se dous celtistas teñen o mesmo número de socio.
 - Método `toString()` que devolve a información do celtista.
 - Método `calcularAntigüidade()` do celtista como un obxecto `Period` desde a data actual. Este método non pode ser sobreescrito nas subclases.
-- Método `calcularPagamento()` que devolve o que ten que pagar o celtista, que se corresponde do almacenado na constante estática.
+- Métido `calcularIdade()` que devolve un enteiro co número de anos que ten o celtista. Este método non pode ser sobreescrito nas subclases.
+- Método `calcularPrezoAnual()` que devolve o que ten que pagar o celtista, que se corresponde do almacenado na constante estática.
   
 ### Clase `Abono`
 
 #### Atributos:
 - `tipoAbono` ("Adulto", "Maiores65", "Sub30", "Sub25", "Sub15", "Infantil")
-- `grada` ("Tribuna alta", "Tribuna baixa", "Río alto", "Río baixo", "Marcador alto", "Grada de animación")
+- `grada` ("Tribuna alta", "Tribuna baixa", "Río alto", "Río baixo", "Marcador alto", "Marcador Baixo")
 - `prezoAbono` (prezo do abono segundo o tipo)
 - HashMap de HashMaps estático que asocia o tipo de abono co prezo correspondente. A clave do primeiro HashMap é a grada e a do segundo HashMap é o tipo de abono. O valor do segundo HashMap é o prezo do abono.
 
+Podes inicializalo con estes datos de exemplo, incluíndo este código tras a declaración dos atributos:
+```java
+static {
+  prezosAbonos = new HashMap<>();
+
+  HashMap<String, Double> tribunaAlta = new HashMap<>();
+  tribunaAlta.put("Adulto", 728.0);
+  tribunaAlta.put("Maiores65", 437.0);
+  tribunaAlta.put("Sub30", 554.0);
+  tribunaAlta.put("Sub25", 463.0);
+  tribunaAlta.put("Sub15", 188.0);
+  tribunaAlta.put("Infantil", 50.0);
+  prezosAbonos.put("Tribuna Alta", tribunaAlta);
+
+  HashMap<String, Double> tribunaBaixa = new HashMap<>();
+  tribunaBaixa.put("Adulto", 550.0);
+  tribunaBaixa.put("Maiores65", 327.0);
+  tribunaBaixa.put("Sub30", 301.0);
+  tribunaBaixa.put("Sub25", 199.0);
+  tribunaBaixa.put("Sub15", 140.0);
+  tribunaBaixa.put("Infantil", 50.0);
+  prezosAbonos.put("Tribuna Baixa", tribunaBaixa);
+
+  HashMap<String, Double> rioBaixo = new HashMap<>();
+  rioBaixo.put("Adulto", 530.0);
+  rioBaixo.put("Maiores65", 327.0);
+  rioBaixo.put("Sub30", 301.0);
+  rioBaixo.put("Sub25", 199.0);
+  rioBaixo.put("Sub15", 140.0);
+  rioBaixo.put("Infantil", 50.0);
+  prezosAbonos.put("Río Baixo", rioBaixo);
+
+  HashMap<String, Double> rioAlto = new HashMap<>();
+  rioAlto.put("Adulto", 475.0);
+  rioAlto.put("Maiores65", 292.0);
+  rioAlto.put("Sub30", 269.0);
+  rioAlto.put("Sub25", 193.0);
+  rioAlto.put("Sub15", 134.0);
+  rioAlto.put("Infantil", 50.0);
+  prezosAbonos.put("Río Alto", rioAlto);
+
+  HashMap<String, Double> marcadorAlto = new HashMap<>();
+  marcadorAlto.put("Adulto", 345.0);
+  marcadorAlto.put("Maiores65", 224.0);
+  marcadorAlto.put("Sub30", 207.0);
+  marcadorAlto.put("Sub25", 155.0);
+  marcadorAlto.put("Sub15", 104.0);
+  marcadorAlto.put("Infantil", 50.0);
+  prezosAbonos.put("Marcador Alto", marcadorAlto);
+
+  HashMap<String, Double> marcadorBaixo = new HashMap<>();
+  marcadorBaixo.put("Adulto", 345.0);
+  marcadorBaixo.put("Maiores65", 224.0);
+  marcadorBaixo.put("Sub30", 207.0);
+  marcadorBaixo.put("Sub25", 155.0);
+  marcadorBaixo.put("Sub15", 104.0);
+  marcadorBaixo.put("Infantil", 50.0);
+  prezosAbonos.put("Marcador Baixo", marcadorBaixo);
+}
+```
+
 ### Métodos:
-- Construtor que inicializa todos os atributos menos o prezo do abono, que se inicializa automaticamente segundo o tipo de abono e a grada.
+- Construtor que inicializa todos os atributos menos o prezo do abono, que se inicializa automaticamente segundo o tipo de abono e a grada. Debes comprobar que tanto o tipo de abono como a grada sexan correctos e, se non o son, lanzar unha excepción `AbonoIncorrectoException` ou `GradaIncorrectaException` que debes crear.
 - *Getters* para os atributos que o precisen.
-- Método `calcularPagamento()`, que sobreescribe ao da clase nai, que devolve o que ten que pagar o abonado segundo o tipo de abono, descontando o saldo acumulado.
 - Método `toString()` que devolve a información do abono.
 
 
@@ -99,6 +160,8 @@ Crea unha aplicación en Java que modele os socios do RC Celta de Vigo empregand
 #### Métodos:
 - Construtor que inicializa todos os atributos (desta clase e da súa clase nai) menos o saldo acumulado, que se inicializa a 0.
 - *Getters* para os atributos que o precisen.
+- Método `calcularPagamento()`, que sobreescribe ao da clase nai, que devolve o que ten que pagar o abonado segundo o tipo de abono, descontando o saldo acumulado.
+- Método `acumularSaldo(double saldo)` que acumula o saldo do abonado. Este método non pode ser sobreescrito nas subclases.
 - Método `toString()` que devolve a información do abonado e do seu abono.
 
 ### Clase `Miudiño` (herda de `Celtista`)
@@ -107,7 +170,7 @@ Crea unha aplicación en Java que modele os socios do RC Celta de Vigo empregand
 - `adultoAsociado` (adulto asociado ao miudiño, debe ser un abonado)
 
 #### Métodos:
-- Construtor que inicializa todos os atributos (desta clase e da súa clase nai).
+- Construtor que inicializa todos os atributos (desta clase e da súa clase nai). Un Miudiño debe ser menor de 5 anos, se non o é, deberá lanzar unha excepción `IdadeIncorrectaException` que debes crear.
 - Método `calcularPagamento()` que devolve sempre 0.
 
 ### Clase `Equipo`
