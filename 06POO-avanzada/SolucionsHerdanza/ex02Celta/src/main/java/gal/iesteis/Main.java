@@ -40,7 +40,7 @@ public class Main {
             celta.engadarCeltista(a1);
             celta.engadarCeltista(m1);
             System.out.println(celta);
-        } catch (GradaIncorrectaException | AbonoIncorrectoException e) {
+        } catch (GradaIncorrectaException | AbonoIncorrectoException | IdadeIncorrectaException e) {
             System.err.println(e.getMessage());
         }
 

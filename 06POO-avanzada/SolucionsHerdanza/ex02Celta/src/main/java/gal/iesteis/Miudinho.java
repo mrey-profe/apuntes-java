@@ -14,8 +14,11 @@ public class Miudinho extends Celtista {
      * @param dataNacemento a data de nacemento do miudinho
      * @param adultoAsociado o adulto asociado ao miudinho
      */
-    public Miudinho(String nome, LocalDate dataNacemento, Abonado adultoAsociado) {
+    public Miudinho(String nome, LocalDate dataNacemento, Abonado adultoAsociado) throws IdadeIncorrectaException {
         super(nome, dataNacemento);
+        if (super.calcularIdade() < 5) {
+            throw new IdadeIncorrectaException("O miudinho ten que ter menos de 5 anos");
+        }
         this.adultoAsociado = adultoAsociado;
     }
 
