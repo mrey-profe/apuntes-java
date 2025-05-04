@@ -43,7 +43,6 @@ Crea unha aplicación en Java que modele unha empresa con distintos tipos de tra
   - Método `calcularSalarioFinal(double prezoHora)` que actualice `salarioFinal` como produto de `horasTraballadas` polo prezo da hora. O `salarioBase` destes traballadores sempre é cero.
   - Método `toString()` que devolva a información do traballador e o salario final.
 
-
 **4. Programa principal**
 
 - Crea un `ArrayList` de `Asalariados` e outro de  `ConsultoresExternos`.
@@ -60,6 +59,7 @@ Crea unha aplicación en Java que modele os socios do RC Celta de Vigo empregand
 ### Clase `Celtista`
 
 #### Atributos:
+
 - `numeroSocio`
 - `dataIngreso`
 - `nome`
@@ -68,6 +68,7 @@ Crea unha aplicación en Java que modele os socios do RC Celta de Vigo empregand
 - Atributo constante e estático para almacenar o prezo do carné celtista nesa tempada.
 
 #### Métodos:
+
 - Construtor para inicializar todos os atributos menos o número de socio, que se inicializa automaticamente e a data de ingreso, que se inicializa co día de hoxe.
 - *Getters* para os atributos que o precisen.
 - Método `equals(Object o)` que devolve `true` se dous celtistas teñen o mesmo número de socio.
@@ -79,12 +80,14 @@ Crea unha aplicación en Java que modele os socios do RC Celta de Vigo empregand
 ### Clase `Abono`
 
 #### Atributos:
+
 - `tipoAbono` ("Adulto", "Maiores65", "Sub30", "Sub25", "Sub15", "Infantil")
 - `grada` ("Tribuna alta", "Tribuna baixa", "Río alto", "Río baixo", "Marcador alto", "Marcador Baixo")
 - `prezoAbono` (prezo do abono segundo o tipo)
 - HashMap de HashMaps estático que asocia o tipo de abono co prezo correspondente. A clave do primeiro HashMap é a grada e a do segundo HashMap é o tipo de abono. O valor do segundo HashMap é o prezo do abono.
 
 Podes inicializalo con estes datos de exemplo, incluíndo este código tras a declaración dos atributos:
+
 ```java
 static {
   prezosAbonos = new HashMap<>();
@@ -146,6 +149,7 @@ static {
 ```
 
 ### Métodos:
+
 - Construtor que inicializa todos os atributos menos o prezo do abono, que se inicializa automaticamente segundo o tipo de abono e a grada. Debes comprobar que tanto o tipo de abono como a grada sexan correctos e, se non o son, lanzar unha excepción `AbonoIncorrectoException` ou `GradaIncorrectaException` que debes crear.
 - *Getters* para os atributos que o precisen.
 - Método `toString()` que devolve a información do abono.
@@ -154,10 +158,12 @@ static {
 ### Clase `Abonado` (herda de `Celtista`)
 
 #### Atributos:
+
   - `abono` (abono do abonado)
   - `saldoAcumulado` (saldo acumulado do abonado pola cesión de asentos non utilizados)
 
 #### Métodos:
+
 - Construtor que inicializa todos os atributos (desta clase e da súa clase nai) menos o saldo acumulado, que se inicializa a 0.
 - *Getters* para os atributos que o precisen.
 - Método `calcularPagamento()`, que sobreescribe ao da clase nai, que devolve o que ten que pagar o abonado segundo o tipo de abono, descontando o saldo acumulado.
@@ -167,14 +173,18 @@ static {
 ### Clase `Miudiño` (herda de `Celtista`)
 
 #### Atributos:
+
 - `adultoAsociado` (adulto asociado ao miudiño, debe ser un abonado)
 
 #### Métodos:
+
 - Construtor que inicializa todos os atributos (desta clase e da súa clase nai). Un Miudiño debe ser menor de 5 anos, se non o é, deberá lanzar unha excepción `IdadeIncorrectaException` que debes crear.
 - Método `calcularPagamento()` que devolve sempre 0.
 
 ### Clase `Equipo`
+
 #### Atributos:
+
 - `nome`
 - `anoFundacion`
 - `estadio`
@@ -183,6 +193,7 @@ static {
 - ArrayList de `Abono` para almacenar os abonos do equipo.
 
 #### Métodos:
+
 - Construtor que recibe o nome, ano de fundación, estadio e aforo. Inicializa os atributos e crea os ArrayList baleiros.
 - `engadirAbono(Abono abono)` que engade un abono á lista de abonos.
 - `engadirCeltista(Celtista celtista)` que engade un celtista á lista de socios.
