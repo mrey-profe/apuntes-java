@@ -85,6 +85,7 @@ Crea unha aplicación en Java que modele os socios do RC Celta de Vigo empregand
 - `grada` ("Tribuna alta", "Tribuna baixa", "Río alto", "Río baixo", "Marcador alto", "Marcador Baixo")
 - `prezoAbono` (prezo do abono segundo o tipo)
 - HashMap de HashMaps estático que asocia o tipo de abono co prezo correspondente. A clave do primeiro HashMap é a grada e a do segundo HashMap é o tipo de abono. O valor do segundo HashMap é o prezo do abono.
+- Podes ter algún autro atributo estático para almacenar as posibles gradas e tipos de abono.
 
 Podes inicializalo con estes datos de exemplo, incluíndo este código tras a declaración dos atributos:
 
