@@ -39,7 +39,7 @@ Crea unha aplicación en Java que modele unha empresa con distintos tipos de tra
   - `salarioFinal`
 - Métodos:
   - Constructor que reciba os datos do pai e inicialice `horasTraballadas`, `salarioBase` e `salarioFinal` a 0.
-  - Métodos *getter* e *setter* para `horasTraballadas`.
+  - Métodos *getter* e *setter* para `horasTraballadas`. *Getter* para `salarioFinal`.
   - Método `calcularSalarioFinal(double prezoHora)` que actualice `salarioFinal` como produto de `horasTraballadas` polo prezo da hora. O `salarioBase` destes traballadores sempre é cero.
   - Método `toString()` que devolva a información do traballador e o salario final.
 
