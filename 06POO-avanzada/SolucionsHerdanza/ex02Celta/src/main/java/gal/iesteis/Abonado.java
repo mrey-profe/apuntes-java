@@ -15,10 +15,10 @@ public class Abonado extends Celtista {
      * @param abono         o abono do abonado
      * @param saldoAcumulado o saldo acumulado do abonado
      */
-    public Abonado(String nome, LocalDate dataNacemento, Abono abono, double saldoAcumulado) {
+    public Abonado(String nome, LocalDate dataNacemento, Abono abono) {
         super(nome, dataNacemento);
         this.abono = abono;
-        this.saldoAcumulado = saldoAcumulado;
+        this.saldoAcumulado = 0;
     }
 
     /**
@@ -31,10 +31,10 @@ public class Abonado extends Celtista {
      * @param abono         o abono do abonado
      * @param saldoAcumulado o saldo acumulado do abonado
      */
-    public Abonado(LocalDate dataIngreso, String nome, LocalDate dataNacemento, Abono abono, double saldoAcumulado) {
+    public Abonado(LocalDate dataIngreso, String nome, LocalDate dataNacemento, Abono abono) {
         super(dataIngreso, nome, dataNacemento);
         this.abono = abono;
-        this.saldoAcumulado = saldoAcumulado;
+        this.saldoAcumulado = 0;
     }
 
     /**
