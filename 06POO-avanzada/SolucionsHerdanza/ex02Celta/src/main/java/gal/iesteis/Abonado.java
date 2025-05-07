@@ -52,7 +52,7 @@ public class Abonado extends Celtista {
      *
      * @return o saldo acumulado do abonado
      */
-    public void acumularSaldo(double saldo) {
+    public final void acumularSaldo(double saldo) {
         this.saldoAcumulado += saldo;
     }
 
