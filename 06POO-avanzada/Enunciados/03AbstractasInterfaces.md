@@ -45,7 +45,7 @@ Implementa dúas subclases con comportamentos específicos:
 - **`Squirtle`:**
     - `tipoElemento = "auga"`.
     - `atacar()`: Inflixe `ataqueBase + 10` se o obxectivo é de tipo `"lume"`. En calquera outro caso, inflixe `ataqueBase`.
-    - `recibirDano(int cantidade)`: Se o obxectivo é de tipo `"lume"`, reduce `puntosVida` en `cantidade / 2`. En calquera outro caso, utiliza o método da clase nai.
+    - `recibirDano(int cantidade)`: Se o atacante é de tipo `"lume"`, reduce `puntosVida` en `cantidade / 2`. En calquera outro caso, utiliza o método da clase nai.
 
 #### Programa principal
 
