@@ -167,7 +167,7 @@ static {
 
 - Construtor que inicializa todos os atributos (desta clase e da súa clase nai) menos o saldo acumulado, que se inicializa a 0.
 - *Getters* para os atributos que o precisen.
-- Método `calcularPagamento()`, que sobreescribe ao da clase nai, que devolve o que ten que pagar o abonado segundo o tipo de abono, descontando o saldo acumulado.
+- Método `calcularPrezoAnual()`, que sobreescribe ao da clase nai, que devolve o que ten que pagar o abonado segundo o tipo de abono, descontando o saldo acumulado.
 - Método `acumularSaldo(double saldo)` que acumula o saldo do abonado. Este método non pode ser sobreescrito nas subclases.
 - Método `toString()` que devolve a información do abonado e do seu abono.
 
@@ -180,7 +180,7 @@ static {
 #### Métodos:
 
 - Construtor que inicializa todos os atributos (desta clase e da súa clase nai). Un Miudiño debe ser menor de 5 anos, se non o é, deberá lanzar unha excepción `IdadeIncorrectaException` que debes crear.
-- Método `calcularPagamento()` que devolve sempre 0.
+- Método `calcularPrezoAnual()` que devolve sempre 0.
 
 ### Clase `Equipo`
 
@@ -199,4 +199,4 @@ static {
 - `engadirAbono(Abono abono)` que engade un abono á lista de abonos.
 - `engadirCeltista(Celtista celtista)` que engade un celtista á lista de socios.
 - Método `toString()` que devolve a información do equipo e dos seus socios.
-- Método `calcularTotalPagos()` que devolve o total que ten que pagar o equipo por todos os seus socios. Para isto, chama ao método `calcularPagamento()` de cada celtista.
+- Método `calcularTotalPagos()` que devolve o total que ten que pagar o equipo por todos os seus socios. Para isto, chama ao método `calcularPrezoAnual()` de cada celtista.
