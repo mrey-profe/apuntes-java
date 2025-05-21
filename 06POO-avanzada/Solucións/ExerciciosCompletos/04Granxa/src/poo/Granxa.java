@@ -66,9 +66,7 @@ public class Granxa {
     }
     
     public void engadirAnimal(TipoAnimal t) {
-        TipoAnimal[] tipos = TipoAnimal.values();
-        int i = Arrays.binarySearch(tipos, t);
-        numAnimais[i]++;
+        numAnimais[t.ordinal()]++;
     }
     
     public void engadirEmpregado(Empregado e) {
@@ -92,7 +90,7 @@ public class Granxa {
     @Override
     public String toString() {
         String resultado =  "Nome: " + nome + "\n" +
-                "Localización: " + localizacion + "\n" +
+                "Localizaciï¿½n: " + localizacion + "\n" +
                 "Encargado/a: " + encargado.getNome() + "\n" +
                 "EMPREGADOS:\n";
         
@@ -102,7 +100,7 @@ public class Granxa {
         
         resultado += "porcos: " + numAnimais[0] + 
                 "  vacas: " + numAnimais[1] + 
-                "  galiñas: " + numAnimais[2] +
+                "  galiï¿½as: " + numAnimais[2] +
                 "  coellos: " + numAnimais[3] + 
                 "  ovellas: " + numAnimais[4] + "\n";
         
