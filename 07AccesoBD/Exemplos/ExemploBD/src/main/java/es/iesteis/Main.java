@@ -40,16 +40,16 @@ public class Main {
                 "FROM empregado AS e " +
                 "JOIN departamento AS d " +
                 "ON (depNumero = empDepartamento) " +
-                "WHERE d.depNome = ?";
+                "WHERE d.depNome = ? AND e.empSalario > ?";
 
         try (Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3307/traballadores", "root", "renaido");
              PreparedStatement ps3 = conexion.prepareStatement(sentenza3);) {
             ps3.setString(1, departamento);
-            ResultSet resultado = ps3.executeQuery();
-            while (resultado.next()) {
-                System.out.println(resultado.getString("empNome"));
+            try (ResultSet resultado = ps3.executeQuery();) {
+                while (resultado.next()) {
+                    System.out.println(resultado.getString("empNome"));
+                }
             }
-            resultado.close();
         } catch (SQLException e) {
             System.out.println("Error al conectar a la base de datos: " + e.getMessage());
         }
