@@ -18,11 +18,11 @@ Podes crear unha clase DAO que conteña os métodos necesarios para realizar as 
 
 
 ### Exercicio 2
-Crea un programa que se conecte a la base de datos `tendaBD.db` e:
+Crea un programa que se conecte á base de datos `tendaBD.db` e:
 
 - Amosar ao usuario os posibles países e permitir que seleccione un deles. A continuación, selecciona os clientes dese país e amosa o seu nome, apelidos e poboación.
 - Inserción de cliente,
   - Pedir os datos necesarios para a inserción de cliente e engadilo á base de datos.
   - Se o cliente xa existe, amosarase un erro.
   - Á hora de pedir o país, debe amosarse un menú cos países existentes na base de datos e introducir o código do país.
-  - Listar os artigos dispoñibles e permitir que o usuario seleccione un deles. A continuación, borra o artigo da base de datos.
+- Listar os artigos dispoñibles e permitir que o usuario seleccione un deles. A continuación, borra o artigo da base de datos.
