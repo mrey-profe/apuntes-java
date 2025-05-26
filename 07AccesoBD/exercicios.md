@@ -16,8 +16,8 @@ Debes empregar consultas preparadas e parametrizadas.
 
 Podes crear unha clase DAO que conteña os métodos necesarios para realizar as operacións solicitadas. De facelo así, cada método debe abrir e pechar a conexión e devolver os resultados necesarios nas estruturas que consideres oportunas.
 
-
 ### Exercicio 2
+
 Crea un programa que se conecte á base de datos `tendaBD.db` e:
 
 - Amosar ao usuario os posibles países e permitir que seleccione un deles. A continuación, selecciona os clientes dese país e amosa o seu nome, apelidos e poboación.
