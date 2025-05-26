@@ -6,7 +6,7 @@ import java.util.Random;
  *
  * @author marta
  */
-public class Triatleta implements Nadador, Ciclista, Saltador{
+public class Triatleta implements Nadador, Ciclista, Saltador {
     private Random r;
 
     public Triatleta() {

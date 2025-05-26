@@ -4,7 +4,7 @@ package ex06nadadores;
  *
  * @author marta
  */
-public class BaleaAzul implements Nadador{
+public class BaleaAzul implements Nadador {
     private int idade;
 
     public BaleaAzul(int idade) {

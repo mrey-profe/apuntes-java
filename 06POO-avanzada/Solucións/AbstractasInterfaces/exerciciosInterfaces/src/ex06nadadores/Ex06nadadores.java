@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Ex06nadadores {
 
     public static void main(String[] args) {
-        ArrayList<Nadador> lista = new ArrayList<Nadador>();
+        ArrayList<Nadador> lista = new ArrayList<>();
 
         lista.add(new Delfin());
         lista.add(new BaleaAzul(4));
@@ -22,8 +22,8 @@ public class Ex06nadadores {
                 System.out.printf("Percorre 10km en asfalto en %.2f segundos\n", 
                         ((Ciclista) n).percorrer(10, "asfalto"));
             }
-            if (n instanceof Saltador) {
-                System.out.println("Saltou " + ((Saltador) n).saltarAltura() + "cm");
+            if (n instanceof Saltador s) {
+                System.out.println("Saltou " + s.saltarAltura() + "cm");
             }
         }
 

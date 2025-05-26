@@ -6,7 +6,7 @@ import java.util.Random;
  *
  * @author marta
  */
-public class Delfin implements Nadador{
+public class Delfin implements Nadador {
 
     @Override
     public double nadar(int m) {

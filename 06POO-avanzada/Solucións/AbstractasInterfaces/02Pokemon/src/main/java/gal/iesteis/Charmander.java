@@ -12,4 +12,8 @@ public class Charmander extends Pokemon {
             obxectivo.recibirDano(this.getAtaqueBase());
         }
     }
+
+    public void voar() {
+        System.out.println("Estou voando");
+    }
 }

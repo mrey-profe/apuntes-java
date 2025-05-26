@@ -25,6 +25,12 @@ public class Main {
         for (Pokemon pokemon : pokemons) {
             System.out.println(pokemon);
             System.out.println("¿Está vivo? " + pokemon.estaVivo());
+//            if (pokemon instanceof Charmander charmander) {
+//                charmander.voar();
+//            }
+            if (pokemon instanceof Charmander) {
+                ((Charmander) pokemon).voar();
+            }
         }
     }
 }

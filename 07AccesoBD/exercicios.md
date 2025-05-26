@@ -4,7 +4,7 @@
 
 ### Exercicio 1
 
-Crea un programa que se conecte a la base de datos `traballadores.db` e:
+Crea un programa que se conecte á base de datos `traballadores.db` e:
 
 - Pregunte ao usuario unha cantidade e amose os empregados que cobren esa cantidade ou menos, así como o departamento ao que pertencen. Seguirá preguntando en bucle un novo salario ata que o usuario indique que non quere seguir preguntando.
 - Pregunte ao usuario un departamento e amose os empregados que pertencen a ese departamento.
