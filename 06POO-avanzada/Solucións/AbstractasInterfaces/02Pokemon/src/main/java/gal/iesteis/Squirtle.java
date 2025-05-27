@@ -1,7 +1,7 @@
 package gal.iesteis;
 
 public class Squirtle extends Pokemon {
-    public Squirtle(int puntosVida, int ataqueBase) {
+    public Squirtle(int puntosVida, int ataqueBase) throws PuntosVidaIncorrectosException {
         super(puntosVida, ataqueBase, Elemento.AGUA);
     }
 

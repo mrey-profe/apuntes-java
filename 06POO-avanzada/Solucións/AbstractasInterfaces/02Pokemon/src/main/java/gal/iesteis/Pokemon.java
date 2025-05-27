@@ -5,10 +5,17 @@ public abstract class Pokemon {
     private int ataqueBase;
     private Elemento tipoElemento;
 
-    public Pokemon(int puntosVida, int ataqueBase, Elemento elemento) {
+    public Pokemon(int puntosVida, int ataqueBase, Elemento elemento) throws PuntosVidaIncorrectosException {
+        if (!puntosVidaCorrectos(puntosVida)) {
+            throw new PuntosVidaIncorrectosException();
+        }
         this.puntosVida = puntosVida;
         this.ataqueBase = ataqueBase;
         this.tipoElemento = elemento;
+    }
+
+    private boolean puntosVidaCorrectos(int puntosVida) {
+        return puntosVida >= 0 && puntosVida <= 200;
     }
 
     public abstract void atacar (Pokemon obxectivo);

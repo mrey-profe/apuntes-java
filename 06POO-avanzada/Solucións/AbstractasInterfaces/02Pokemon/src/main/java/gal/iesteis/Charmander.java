@@ -1,7 +1,7 @@
 package gal.iesteis;
 
 public class Charmander extends Pokemon {
-    public Charmander(int puntosVida, int ataqueBase) {
+    public Charmander(int puntosVida, int ataqueBase) throws PuntosVidaIncorrectosException {
         super(puntosVida, ataqueBase, Elemento.FUEGO);
     }
 

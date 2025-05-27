@@ -5,10 +5,14 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Pokemon> pokemons = new ArrayList<>();
-        pokemons.add(new Charmander(100, 20));
-        pokemons.add(new Squirtle(100, 15));
-        pokemons.add(new Charmander(130, 30));
-        pokemons.add(new Squirtle(120, 25));
+        try {
+            pokemons.add(new Charmander(100, 20));
+            pokemons.add(new Squirtle(100, 15));
+            pokemons.add(new Charmander(230, 30));
+            pokemons.add(new Squirtle(120, 25));
+        } catch (PuntosVidaIncorrectosException e) {
+            System.out.println(e.getMessage());
+        }
 
         for (Pokemon pokemon : pokemons) {
             System.out.println(pokemon);
