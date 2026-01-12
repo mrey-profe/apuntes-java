@@ -1,78 +1,78 @@
 # ArrayLists
 
-## Exercicio 1
+## Exercise 1
 
-Crea un programa que lea por teclado notas de alumnado mentres o usuario non indique que quere parar.
+Create a program that reads student grades from the keyboard while the user does not indicate that they want to stop.
 
-O programa debe almacenar as notas nun **ArrayList** e, ao final, mostrar a media das notas.
+The program must store the grades in an **ArrayList** and, at the end, display the average of the grades.
 
-Podes pedir unha nota e, a continuación, preguntar se quere continuar ou non.
+You can ask for a grade and then ask if they want to continue or not.
 
-## Exercicio 2
+## Exercise 2
 
-### Clase *Persoa*
+### Class *Person*
 
-Crea unha clase *Persoa* que teña os seguintes atributos:
-- Nome
-- Apelidos
-- Teléfono
+Create a class *Person* that has the following attributes:
+- Name
+- Surname
+- Phone
 
-### Clase *Flor*
+### Class *Flower*
 
-Crea unha clase *Flor* que teña os seguintes atributos:
-- Nome
-- Cor
-- Prezo
-- Array coas cores posibles das flores, que será común a todas as flores.
+Create a class *Flower* that has the following attributes:
+- Name
+- Color
+- Price
+- Array with the possible colors of the flowers, which will be common to all flowers.
 
-Crea un construtor que inicialice todos os atributos e un método que mostre a información da flor.
+Create a constructor that initializes all attributes and a method that displays the information of the flower.
 
-Comproba que o prezo non sexa negativo e que a cor estea dentro das cores posibles. Se non é así, lanza unha excepción.
+Check that the price is not negative and that the color is within the possible colors. If not, throw an exception.
 
-### Clase *Ramo*
+### Class *Bouquet*
 
-Crea unha clase *Ramo* que teña os seguintes atributos:
-- ArrayList de flores
-- Persoa que o encargou
+Create a class *Bouquet* that has the following attributes:
+- ArrayList of flowers
+- Person who ordered it
 
-#### Métodos
+#### Methods
 
-- Construtor que só reciba a persoa que encargou o ramo. O ramo inicialízase sen flores.
-- Construtor que inicialice todos os atributos.
-- Método que engada unha flor ao ramo.
-- Método que elimine flores do ramo. Pásaselle o tipo de flor, a súa cor e o número delas que se queren eliminar.
-- Método que calcule o prezo total do ramo.
-- Método que mostre a información de todo o ramo: que flores ten, o prezo total e a persoa que o comprou.
+- Constructor that only receives the person who ordered the bouquet. The bouquet is initialized without flowers.
+- Constructor that initializes all attributes.
+- Method that adds a flower to the bouquet.
+- Method that removes flowers from the bouquet. The type of flower, its color, and the number of them to be removed are passed to it.
+- Method that calculates the total price of the bouquet.
+- Method that shows the information of the entire bouquet: what flowers it has, the total price, and the person who bought it.
 
-### Programa principal
+### Main program
 
-Crea un programa que cree un ArrayList de ramos (ao teu gusto) e percorra este para mostralos por pantalla.
+Create a program that creates an ArrayList of bouquets (to your liking) and traverses it to display them on the screen.
 
-## Exercicio 3
+## Exercise 3
 
-Crea un programa que permita xestionar unha lista de viaxes organizadas e os viaxeiros inscritos. O programa debe incluír as seguintes funcionalidades:
+Create a program that allows managing a list of organized trips and the registered travelers. The program must include the following functionalities:
 
-- Engadir unha viaxe organizada (destino, prezo, cantidade de días).
-- Rexistrar un viaxeiro (nome, idade) e asocialo a unha viaxe organizada.
-- Mostrar todos os destinos turísticos dispoñibles.
-- Listar os viaxeiros rexistrados para cada viaxe.
-- Eliminar unha viaxe (e os seus viaxeiros asociados).
-- Buscar viaxes por destino.
-- Buscar destinos por país.
+- Add an organized trip (destination, price, number of days).
+- Register a traveler (name, age) and associate them with an organized trip.
+- Show all available tourist destinations.
+- List the registered travelers for each trip.
+- Delete a trip (and its associated travelers).
+- Search for trips by destination.
+- Search for destinations by country.
 
-Pensa en que clases e atributos son necesarios para implementar o programa. Utiliza **ArrayList** para almacenar as viaxes e os viaxeiros. Implementa métodos para realizar as operacións solicitadas.
+Think about what classes and attributes are necessary to implement the program. Use **ArrayList** to store the trips and travelers. Implement methods to perform the requested operations.
 
 # HashMap
 
-## Exercicio 4
+## Exercise 4
 
-Modifica o exercicio 2 (Flores e Ramos) para que o ArrayList de flores na clase Ramo sexa un **HashMap**, onde a clave sexa a flor e o valor sexa a cantidade de flores dese tipo no ramo. Implementa os métodos necesarios para engadir, eliminar e mostrar as flores no ramo utilizando o **HashMap**.
+Modify exercise 2 (Flowers and Bouquets) so that the ArrayList of flowers in the Bouquet class is a **HashMap**, where the key is the flower and the value is the quantity of flowers of that type in the bouquet. Implement the necessary methods to add, remove, and display flowers in the bouquet using the **HashMap**.
 
-## Exercicio 5
+## Exercise 5
 
-Crea un programa que permita xestionar os integrantes dun instituto. Teremos as seguintes clases:
-- **Alumnx**: nome, apelidos, data de nacemento (investiga como manexar datas en Java).
-- **Profesor**: nome, especialidade.
-- **Asignatura**: nome, horas semanais.
-- **Curso**: Nivel, letra, lista de alumnxs e **HashMap** que asocie Asignatura con Profesor.
-- **Instituto**: nome, dirección, **HashMap** que asocie cursos (obxecto da clase **Curso**) con titores (obxecto da clase **Profesor**).
+Create a program that allows managing the members of an institute. We will have the following classes:
+- **Student**: name, surname, date of birth (investigate how to handle dates in Java).
+- **Teacher**: name, specialty.
+- **Subject**: name, weekly hours.
+- **Course**: Level, letter, list of students, and **HashMap** that associates Subject with Teacher.
+- **Institute**: name, address, **HashMap** that associates courses (object of the **Course** class) with tutors (object of the **Teacher** class).

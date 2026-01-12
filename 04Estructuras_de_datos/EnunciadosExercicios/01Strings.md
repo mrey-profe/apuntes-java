@@ -1,160 +1,160 @@
-# Exercicios de Strings
+# String Exercises
 
-## Exercicio 1: Operacións con cadeas
+## Exercise 1: String Operations
 
-Crea unha clase chamada `OperacionsCadeas` que teña unicamente métodos estáticos e implemente os seguintes métodos sen empregar os métodos estándar de manipulación de cadeas:
+Create a class called `StringOperations` that has only static methods and implements the following methods without using standard string manipulation methods:
 
-1. **Carácter por liña:** Escribe cada carácter dunha cadea nunha liña diferente.
-2. **Verificar prefixo:** Comproba se unha cadea comeza cunha subcadea dada.
-3. **Contar caracteres:** Conta cantas veces aparece un carácter nunha cadea.
-4. **Número de palabras:** Calcula o número de palabras nunha frase (separadas por un ou máis espazos).
-5. **Iniciais en maiúsculas:** Devolve unha nova cadea igual á orixinal, pero coas iniciais de cada palabra en maiúsculas.
-6. **Invertir cadea:** Devolve unha cadea coa orde dos caracteres invertida.
-7. **Substituír caracteres:** Substitúe todas as aparicións dun carácter por outro.
-8. **Maiúsculas/minúsculas:** Converte maiúsculas a minúsculas e viceversa.
-9. **Buscar subcadea:** Verifica se unha cadea contén unha subcadea.
-10. **Palíndromo:** Indica se unha cadea é un palíndromo (léese igual de esquerda a dereita e viceversa).
-11. **Siglas dunha frase:** Devolve as siglas dunha frase en maiúsculas (primeira letra de cada palabra).
+1. **Character per line:** Write each character of a string on a different line.
+2. **Check prefix:** Check if a string starts with a given substring.
+3. **Count characters:** Count how many times a character appears in a string.
+4. **Number of words:** Calculate the number of words in a sentence (separated by one or more spaces).
+5. **Initials in uppercase:** Return a new string equal to the original, but with the initials of each word in uppercase.
+6. **Reverse string:** Return a string with the order of characters reversed.
+7. **Replace characters:** Replace all occurrences of one character with another.
+8. **Uppercase/lowercase:** Convert uppercase to lowercase and vice versa.
+9. **Search substring:** Check if a string contains a substring.
+10. **Palindrome:** Indicate if a string is a palindrome (reads the same forwards and backwards).
+11. **Acronyms of a phrase:** Return the acronyms of a phrase in uppercase (first letter of each word).
 
-## Exercicio 2: Cifrado César
+## Exercise 2: Caesar Cipher
 
-Un dos métodos máis antigos para codificar mensaxes é o coñecido como cifrado César. O seu funcionamento é simple: cada unha das letras da mensaxe orixinal é substituída por outra letra que se atopa un número fixo de posicións máis adiante no alfabeto.
+One of the oldest methods for encoding messages is the one known as the Caesar cipher. Its operation is simple: each of the letters of the original message is replaced by another letter that is located a fixed number of positions further along in the alphabet.
 
-Os desprazamentos tamén poden ser negativos; por exemplo, se utilizamos un desprazamento de -1, a 'E' converterase en 'D', mentres que a 'A' pasará a ser 'Z'.
+The shifts can also be negative; for example, if we use a shift of -1, 'E' will become 'D', while 'A' will become 'Z'.
 
-O noso cifrado César non codifica os caracteres que non sexan letras anglosaxoas. Así, por exemplo, os espazos ou os símbolos de puntuación non sufrirán cambio algún.
+Our Caesar cipher does not encode characters that are not Anglo-Saxon letters. Thus, for example, spaces or punctuation symbols will not suffer any change.
 
-1. Crea un programa en Java que pregunte ao usuario unha mensaxe sen cifrar e o desprazamento que quere empregar e devolva a mensaxe cifrada.
+1. Create a Java program that asks the user for an unencrypted message and the shift they want to use and returns the encrypted message.
 
-   Por exemplo, se o usuario introduce a mensaxe "ABC" e o desprazamento é 3, o programa devolverá "DEF".
+   For example, if the user enters the message "ABC" and the shift is 3, the program will return "DEF".
 
-2. Modifica o programa para que amose un menú no que o usuario poida escoller cifrado ou descifrado (estrutúrao empregando métodos).
+2. Modify the program to display a menu where the user can choose encryption or decryption (structure it using methods).
 
-Podes comprobar os teus resultados con axuda desta calculadora en liña:
+You can check your results with the help of this online calculator:
 <https://es.planetcalc.com/1434/>
 
-## Exercicio 3 (<https://www.aceptaelreto.com/problem/statement.php?id=106&cat=16>)
+## Exercise 3 (<https://www.aceptaelreto.com/problem/statement.php?id=106&cat=16>)
 
-O sistema EAN-8 codifica os códigos de barras en 8 números, dos cales os 7 primeiros constitúen o propio código e o último sería o código de control.
+The EAN-8 system encodes barcodes in 8 numbers, of which the first 7 constitute the code itself and the last one would be the control code.
 
 <p><img src="codigo-ean.png" width="100px"></p>
 
-Para calcular o díxito de control (contando desde a dereita):
+To calculate the control digit (counting from the right):
 
-1. Os díxitos en posicións impares multiplícanse por 3.
-2. Os díxitos en posicións pares multiplícanse por 1.
-3. Súmanse os resultados e calcúlase o número necesario para chegar ao múltiplo de 10 máis próximo.
+1. The digits in odd positions are multiplied by 3.
+2. The digits in even positions are multiplied by 1.
+3. The results are added together and the number needed to reach the nearest multiple of 10 is calculated.
 
-Por exemplo, para o código EAN-8 da figura a operación para realizar é:
+For example, for the EAN-8 code in the figure, the operation to be performed is:
 $$2 · 3 + 5 · 1 + 9 · 3 + 3 · 1 + 8 · 3 + 5 · 1 + 6 · 3 = 88$$
 
-O díxito de comprobación é o número que hai que sumar ao resultado anterior para chegar a un valor múltiplo de 10. No exemplo de EAN-8, para chegar ao múltiplo de 10 máis próximo por encima do número 88 hai que sumar 2 (e chegar ao 90). Ten en conta que se a suma resulta ser xa múltiplo de 10, o díxito de control será 0.
+The check digit is the number that must be added to the previous result to reach a multiple of 10. In the EAN-8 example, to reach the nearest multiple of 10 above the number 88, 2 must be added (and reach 90). Keep in mind that if the sum is already a multiple of 10, the control digit will be 0.
 
-Realiza un programa que reciba un código EAN-8 sen o díxito de control e o calcule. Engade a posibilidade de comprobar o díxito de control dun código completo.
+Create a program that receives an EAN-8 code without the control digit and calculates it. Add the possibility to check the control digit of a complete code.
 
-## Exercicio 4 (<https://www.aceptaelreto.com/problem/statement.php?id=117&cat=16>)
+## Exercise 4 (<https://www.aceptaelreto.com/problem/statement.php?id=117&cat=16>)
 
-Crea un programa que ante un saúdo coa estrutura "Son \<nome\>" conteste "Ola, \<nome\>" mentres reciba liñas de texto diferentes a "Acabou a festa" (esta con calquera capitalización).
+Create a program that, in response to a greeting with the structure "I am \<name\>", replies "Hello, \<name\>" as long as it receives lines of text different from "The party is over" (this with any capitalization).
 
-## Exercicio 5 (<https://www.aceptaelreto.com/problem/statement.php?id=110&cat=16>)
+## Exercise 5 (<https://www.aceptaelreto.com/problem/statement.php?id=110&cat=16>)
 
-Implementa un programa que determine se dous versos riman ou non (considerando rima consoante, deben coincidir todas as letras a partires da última vogal acentuada).
+Implement a program that determines whether two lines rhyme or not (considering consonant rhyme, all letters must match from the last stressed vowel).
 
-Considera que as últimas palabras son graves, é dicir que o acento se atopa na penúltima vogal do verso e que esas últimas vogais non levan til.
+Assume that the last words are grave, meaning that the stress is on the penultimate vowel of the line and that these last vowels do not have a tilde.
 
-Na primeira aproximación, considera que as letras que tés que comprobar son as 3 últimas de cada liña.
+In the first approach, consider that the letters you need to check are the last 3 of each line.
 
-Unha vez que teñas conseguido isto, modifícao para que o programa procure a penúltima vogal e compare a partir dela.
+Once you have achieved this, modify it so that the program looks for the penultimate vowel and compares from there.
 
-## Exercicio 6: Expresións regulares
+## Exercise 6: Regular Expressions
 
-### Apartado a
+### Part a
 
-Crea as seguintes expresións regulares e proporciona exemplos coincidentes e non coincidentes:
+Create the following regular expressions and provide matching and non-matching examples:
 
-| Expresión Regular                      | Expresión regular | Exemplo Coincidente | Exemplo Non Coincidente |
-|----------------------------------------|-------------------|---------------------|-------------------------|
-| Tres letras maiúsculas                 ||||
-| Número de 9 díxitos                    ||||
-| Número, punto, e letra maiúscula/minúscula ||||
-| Maiúscula inicial e minúsculas         ||||
-| Non comeza por díxito                  ||||
-| Entre 5 e 10 caracteres alfanuméricos  ||||
-| Comeza por [DAW] seguido de tres números entre 4 e 7 ||||
+| Regular Expression                      | Regular expression | Matching Example | Non-Matching Example |
+|----------------------------------------|-------------------|-----------------|---------------------|
+| Three uppercase letters                 ||||
+| 9-digit number                          ||||
+| Number, period, and uppercase/lowercase letter ||||
+| Uppercase initial and lowercase         ||||
+| Does not start with a digit            ||||
+| Between 5 and 10 alphanumeric characters  ||||
+| Starts with [DAW] followed by three numbers between 4 and 7 ||||
 
-### Apartado b
+### Part b
 
-Crea unha aplicación que valide cadeas segundo as expresións regulares anteriores.
+Create an application that validates strings according to the previous regular expressions.
 
-## Exercicio 7: Procura de palabras en negrita
+## Exercise 7: Search for Bold Words
 
-As palabras en negrita en formato Markdown están rodeadas por dous asteriscos. Crea un programa que reciba unha cadea de texto e amose por pantalla as palabras en negrita. Debes empregar expresións regulares.
+Bold words in Markdown format are surrounded by two asterisks. Create a program that receives a text string and displays the bolded words. You must use regular expressions.
 
-## Exercicio 8: Contas de usuario
+## Exercise 8: User Accounts
 
-Crea unha clase `Usuario` coas seguintes características:
+Create a `User` class with the following characteristics:
 
-### Atributos
+### Attributes
 
-- Nome
-- Apelidos
-- DNI. Debe comprobarse, mediante unha expresión regular, que ten o formato correcto (6 números seguidos dunha letra maiúscula) e que a letra é correcta, segundo o algoritmo oficial.
-- Usuario do sistema
-- Contrasinal
-- Correo electrónico. Debe comprobarse, mediante unha expresión regular, que ten o formato correcto.
+- Name
+- Surname
+- DNI. It must be checked, using a regular expression, that it has the correct format (6 digits followed by an uppercase letter) and that the letter is correct, according to the official algorithm.
+- System user
+- Password
+- Email. It must be checked, using a regular expression, that it has the correct format.
   
-### Construtor
+### Constructor
 
-- Debe recibir o nome, os apelidos, o DNI e o correo electrónico. Deberá crear o usuario do sistema (usando `crearUsuario()`) e o contrasinal de forma aleatoria co método `crearContrasinal()`.
+- It must receive the name, surname, DNI, and email. It should create the system user (`using createUser()`) and the password randomly using the `createPassword()` method.
 
-### Métodos
+### Methods
 
-- `calculaLetraDNI()`: Calcula a letra do DNI segundo o algoritmo oficial. Debe ser un método estático.
-- `dniCorrecto()`: Comproba se o DNI é correcto.
-- `correoCorrecto()`: Comproba se o correo electrónico é correcto.
-- `crearUsuario()`: Crea un usuario do sistema co nome do usuario en minúsculas e as iniciais dos apelidos. Por exemplo, para un usuario con nome "Xiama" e apelidos "Pérez López", o usuario do sistema sería "xianapl".
-- `crearContrasinal()`: Crea un contrasinal aleatorio de 8 caracteres alfanuméricos, coas seguintes condicións:
-  - 12 caracteres
-  - 3 letras maiúsculas
-  - 2 símbolos entre os seguintes: `!@#$%&`
-**PISTAS**: Emprega a clase `Random` para xerar números aleatorios, e a clase `StringBuilder` para xerar o contrasinal. Xera primeiro o contrasinal con 10 letras minúsculas, determina aleatoriamente cales 3 delas pasarán a maiúsculas, escolle 2 símbolor e colócaos en posicións aleatorias.
-- `toString()`: Devolve unha cadea coa información do usuario.
+- `calculateDNILetter()`: Calculates the DNI letter according to the official algorithm. It must be a static method.
+- `isDNIValid()`: Checks if the DNI is correct.
+- `isEmailValid()`: Checks if the email is correct.
+- `createUser()`: Creates a system user with the user's name in lowercase and the initials of the surnames. For example, for a user named "Xiama" with surnames "Pérez López", the system user would be "xianapl".
+- `createPassword()`: Creates a random password of 8 alphanumeric characters, with the following conditions:
+  - 12 characters
+  - 3 uppercase letters
+  - 2 symbols from the following: `!@#$%&`
+**HINTS**: Use the `Random` class to generate random numbers, and the `StringBuilder` class to generate the password. First, generate the password with 10 lowercase letters, randomly determine which 3 will become uppercase, choose 2 symbols, and place them in random positions.
+- `toString()`: Returns a string with the user's information.
 
-## Exercicio 9: Vehículo
+## Exercise 9: Vehicle
 
-Crea unha clase `Vehiculo` coas seguintes características:
+Create a `Vehicle` class with the following characteristics:
 
-### Atributos
+### Attributes
 
-- Matrícula. Debe ser unha matrícula válida, con 4 números e 3 letras (segundo as normas actuais), emprega expresións regulares.
-- Marca
-- Modelo
-- Cor
-- Ano de fabricación. Debe comprobarse que é un ano válido (entre 1900 e o ano actual).
-- Propietario. Será un obxecto da clase `Persoa`. Podes empregar a clase `Persoa` do exercicio anterior.
-- Última matrícula, será un atributo estático que se incrementará cada vez que se cree un vehículo. Debes seguir as normas de matriculación actuais.
+- License plate. It must be a valid license plate, with 4 numbers and 3 letters (according to current regulations), use regular expressions.
+- Brand
+- Model
+- Color
+- Year of manufacture. It must be checked that it is a valid year (between 1900 and the current year).
+- Owner. It will be an object of the `Person` class. You can use the `Person` class from the previous exercise.
+- Last license plate, it will be a static attribute that will be incremented every time a vehicle is created. You must follow the current registration rules.
 
-### Construtores
+### Constructors
 
-- Un deles debe recibir a marca, o modelo, a cor, o ano de fabricación e o propietario. A matrícula debe ser asignada automaticamente, a seguinte á última matrícula asignada.
-- Otro debe recibir os valores de todos os atributos, incluída a matrícula.
+- One of them must receive the brand, model, color, year of manufacture, and owner. The license plate must be assigned automatically, the next one to the last assigned license plate.
+- Another must receive the values of all attributes, including the license plate.
 
-### Métodos
+### Methods
 
-- `matricular()`: Asigna unha matrícula ao vehículo. Debe modificar o atributo estático `últimaMatrícula` para que a seguinte matrícula sexa correcta.
-- `toString()`: Devolve unha cadea coa información do vehículo.
-- Métodos que permitan validar os atributos indicados.
+- `register()`: Assigns a license plate to the vehicle. It must modify the static attribute `lastLicensePlate` so that the next license plate is correct.
+- `toString()`: Returns a string with the vehicle's information.
+- Methods that allow validating the indicated attributes.
 
-**PISTAS**: Emprega a clase `LocalDate` para obter o ano actual.
+**HINTS**: Use the `LocalDate` class to get the current year.
 
-## Exercicio 10: Operacións sobre `StringBuilder`
+## Exercise 10: Operations on `StringBuilder`
 
-Implementa operacións sobre unha cadea convertida a `StringBuilder`:
+Implement operations on a string converted to `StringBuilder`:
 
-1. Engadir `*` na posición 3.
-2. Substituír o carácter da posición 1 por `#`.
-3. Eliminar o carácter da posición 2.
-4. Eliminar caracteres entre as posicións 5 e 8.
-5. Inverter os caracteres.
-6. Substituír caracteres en posicións pares por `$`.
-7. Converter o resultado final a `String`.
+1. Add `*` at position 3.
+2. Replace the character at position 1 with `#`.
+3. Delete the character at position 2.
+4. Delete characters between positions 5 and 8.
+5. Reverse the characters.
+6. Replace characters in even positions with `$`.
+7. Convert the final result to `String`.

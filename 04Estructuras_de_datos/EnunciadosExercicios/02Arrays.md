@@ -1,70 +1,70 @@
-# Exercicios de Arrays
+# Array Exercises
 
-## Exercicio 1: Creación dun array unidimensional
+## Exercise 1: Creating a one-dimensional array
 
-Crea un programa que sirva para xestionar as notas dun alumno nun determinado módulo. O programa preguntará cantas notas se van introducir, pedirá as notas, gardaraas nun array e amosará a media.
+Create a program that manages the grades of a student in a specific module. The program will ask how many grades will be entered, request the grades, store them in an array, and display the average.
 
-## Exercicio 2: Arrays de pares e impares
+## Exercise 2: Even and odd arrays
 
-Escribe un programa no que se definan dous arrays de 100 números enteiros, un chamado `pares` e outro `impares`. Inicializa o primeiro cos 100 primeiros números pares positivos (é dicir, pares[0] conterá o valor 2, pares[1] conterá o valor 4, pares[2] conterá o valor 6, e así sucesivamente).
+Write a program that defines two arrays of 100 integers, one called `even` and the other `odd`. Initialize the first with the first 100 positive even numbers (i.e., even[0] will contain the value 2, even[1] will contain the value 4, even[2] will contain the value 6, and so on).
 
-Inicializa o segundo cos 100 primeiros números impares positivos.
+Initialize the second with the first 100 positive odd numbers.
 
-## Exercicio 3: Meses do ano
+## Exercise 3: Months of the year
 
-Crea un programa con dous arrays constantes: un co nome dos meses en galego e, noutro, os meses do ano en inglés.
+Create a program with two constant arrays: one with the names of the months in Galician and, in another, the months of the year in English.
 
-Percorre os dous arrays e amosa a equivalencia entre os meses en galego e en inglés.
+Traverse the two arrays and show the equivalence between the months in Galician and in English.
 
-## Exercicio 4: Devolución de arrays
+## Exercise 4: Returning arrays
 
-Escribe un método que reciba un número enteiro `n` e devolva un array de `n` números aleatorios entre 1 e 100.
+Write a method that receives an integer `n` and returns an array of `n` random numbers between 1 and 100.
 
-## Exercicio 5: Paso de arrays como parámetros
+## Exercise 5: Passing arrays as parameters
 
-Escribe un método que reciba dous arrays de números enteiros e devolva un array que conteña a suma dos elementos dos arrays recibidos. Debe comprobarse que os arrays teñen o mesmo tamaño.
+Write a method that receives two arrays of integers and returns an array that contains the sum of the elements of the received arrays. It must be checked that the arrays have the same size.
 
-## Exercicio 6: Array bidimensional. Notas dun curso
+## Exercise 6: Two-dimensional array. Course grades
 
-Deberase crear unha matriz coas notas de todo un curso. Cada fila representará ás notas dun alumno e cada columna representará as notas das materias. En total son 10 alumnos e cada un terá notas para as 8 materias das que se compón o curso.
+A matrix must be created with the grades of an entire course. Each row will represent the grades of a student and each column will represent the grades of the subjects. There are 10 students in total, and each will have grades for the 8 subjects that make up the course.
 
-Inicializarase a matriz directamente coas notas obtidas en todo o curso.
+The matrix will be initialized directly with the grades obtained throughout the course.
 
-A partir da información contida na matriz deberán realizarse os cálculos necesarios para amosar a seguinte información (debes crear unha clase con métodos estáticos para cada unha das operacións):
+Based on the information contained in the matrix, the necessary calculations must be made to show the following information (you must create a class with static methods for each of the operations):
 
-- Nota media de todo o curso.
-- Nota media de cada alumno.
-- Nota media de cada módulo.
-- Indicar cantas notas son superiores ou igual a 5 (aprobados en total)
-- Indicar cantas notas son inferiores a 5 (suspensos)
-- Mostrar cal é a mellor nota de todo o curso.
-- Mostrar cal é a peor nota de todo o curso.
-- Indicar cantos alumnos teñen todas as materias aprobadas.
+- Average grade for the entire course.
+- Average grade for each student.
+- Average grade for each subject.
+- Indicate how many grades are greater than or equal to 5 (passed in total)
+- Indicate how many grades are less than 5 (failed)
+- Show what the best grade in the course is.
+- Show what the worst grade in the course is.
+- Indicate how many students have passed all subjects.
 
-## Exercicio 7: Array bidimensional de flores
+## Exercise 7: Two-dimensional array of flowers
 
-Imos crear un xardín de flores programando en Java, nel queremos plantar rosas, xirasoles, margaridas e tulipáns.
+Let's create a flower garden by programming in Java, in which we want to plant roses, sunflowers, daisies, and tulips.
 
-### Clase `Flor`
+### `Flower` Class
 
-Crearemos unha clase `Flor` que almacenará o tipo da flor e a súa cor. Terá ademais dous atributos estáticos e constantes que serán arrays cos tipos de flores e cores posibles.
+We will create a `Flower` class that will store the type of flower and its color. It will also have two static and constant attributes that will be arrays with the possible types of flowers and colors.
 
-Debes comprobar que a flor que se está a crear é válida, é dicir, que o tipo e a cor están dentro dos arrays de tipos e cores. Emprega algún método da clase `Arrays` para saber se o tipo e a cor están dentro dos arrays de tipos e cores.
+You must check that the flower being created is valid, i.e., that the type and color are within the arrays of types and colors. Use some method of the `Arrays` class to determine if the type and color are within the arrays of types and colors.
 
-Terá un método `toString` que devolverá a flor en formato de texto.
+It will have a `toString` method that will return the flower in text format.
 
 ```text
-rosa de cor vermella
+rose of red color
 ```
 
-### Clase `Xardin`
+### `Garden` Class
 
-A clase `Xardin` terá un só atributo: un array bidimensional de flores. Este array representará o xardín.
+The `Garden` class will have a single attribute: a two-dimensional array of flowers. This array will represent the garden.
 
-Ao construtor se lle pasará o ancho e o alto do xardín. Debe inicializarse aleatoriamente con flores (se empregarán as constantes da clase `Flor` para saber cales son os tipos de flores e cores posibles).
+The constructor will receive the width and height of the garden. It must be initialized randomly with flowers (the constants of the `Flower` class will be used to know which are the possible types of flowers and colors).
 
-Terá un método `contarFlores` que reciba como parámetro un tipo de flor e devolva o número de flores dese tipo que hai no xardín.
+It will have a `countFlowers` method that receives a type of flower as a parameter and returns the number of flowers of that type in the garden.
 
-Terá un método `toString` que devolverá o xardín en formato de texto. Utiliza a clase `StringBuilder` para construír a cadea de texto resultante.
+It will have a `toString` method that will return the garden in text format. Use the `StringBuilder` class to build the resulting text string.
 
-Crea un `getter` que devolva o array de flores e proba a amosalo no programa principal empregando algún método da clase `Arrays`.
+Create a `getter` that returns the array of flowers and try to display it in the main program using some method of the `Arrays` class.
