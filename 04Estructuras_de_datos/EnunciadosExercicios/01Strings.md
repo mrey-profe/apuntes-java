@@ -98,7 +98,7 @@ Create a `User` class with the following characteristics:
 
 - Name
 - Surname
-- DNI. It must be checked, using a regular expression, that it has the correct format (6 digits followed by an uppercase letter) and that the letter is correct, according to the official algorithm.
+- DNI. It must be checked, using a regular expression, that it has the correct format (8 digits followed by an uppercase letter) and that the letter is correct, according to the official algorithm.
 - System user
 - Password
 - Email. It must be checked, using a regular expression, that it has the correct format.
@@ -112,9 +112,9 @@ Create a `User` class with the following characteristics:
 - `calculateDNILetter()`: Calculates the DNI letter according to the official algorithm. It must be a static method.
 - `isDNIValid()`: Checks if the DNI is correct.
 - `isEmailValid()`: Checks if the email is correct.
-- `createUser()`: Creates a system user with the user's name in lowercase and the initials of the surnames. For example, for a user named "Xiama" with surnames "Pérez López", the system user would be "xianapl".
-- `createPassword()`: Creates a random password of 8 alphanumeric characters, with the following conditions:
-  - 12 characters
+- `createUser()`: Creates a system user with the user's name in lowercase and the initials of the surnames. For example, for a user named "Xiana" with surnames "Pérez López", the system user would be "xianapl".
+- `createPassword()`: Creates a random password of 12 characters, with the following conditions:
+  - 10 alphanumeric characters
   - 3 uppercase letters
   - 2 symbols from the following: `!@#$%&`
 **HINTS**: Use the `Random` class to generate random numbers, and the `StringBuilder` class to generate the password. First, generate the password with 10 lowercase letters, randomly determine which 3 will become uppercase, choose 2 symbols, and place them in random positions.

@@ -14,6 +14,7 @@ public class Ex06saudo {
         while (!presentacion.equalsIgnoreCase("Acabou a festa")) {
             //String nome = presentacion.substring(4);
             int indiceEspacio = presentacion.indexOf(" ");
+            indiceEspacio = presentacion.indexOf(" ", indiceEspacio+1);
             String nome = presentacion.substring(indiceEspacio + 1);
             System.out.println("Ola, " + nome);
             presentacion = teclado.nextLine();
