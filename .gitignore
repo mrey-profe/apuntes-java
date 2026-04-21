@@ -1,7 +1,13 @@
 *.zip
 *.class
-/02Estructuras-de-control/proyectos/soluciones/target/
+/**/target/
 *.sh
 .venv
 tests-moodle/
 *.pdf
+!**/Presentacións/*.pdf
+!**/Presentacións/**/*.pdf
+
+# IntelliJ / JetBrains
+**/.idea/
+*.iml
