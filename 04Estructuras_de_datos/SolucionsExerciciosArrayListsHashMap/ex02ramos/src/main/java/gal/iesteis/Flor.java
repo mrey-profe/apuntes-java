@@ -1,6 +1,7 @@
 package gal.iesteis;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Flor {
     private String nome;
@@ -55,5 +56,16 @@ public class Flor {
 
     public double getPrezo() {
         return prezo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Flor flor)) return false;
+        return Objects.equals(nome, flor.nome) && Objects.equals(cor, flor.cor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, cor);
     }
 }
