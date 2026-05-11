@@ -2,6 +2,7 @@
 *.class
 /**/target/
 *.sh
+!**/00_init.sh
 .venv
 tests-moodle/
 *.pdf
