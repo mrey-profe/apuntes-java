@@ -1,25 +1,22 @@
 services:
   db:
-    image: mysql:latest
+    image: postgres:latest
     container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: renaido
-      MYSQL_DATABASE: pruebas
-      MYSQL_USER: usuario
-      MYSQL_PASSWORD: renaido
+      POSTGRES_PASSWORD: renaido
+      POSTGRES_DB: pruebas
+      POSTGRES_USER: usuario
     ports:
-      - "3307:3306"
+      - "5432:5432"
     volumes:
-      - dbdata:/var/lib/mysql
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+      - dbdata:/var/lib/postgresql
+      - ./bds:/docker-entrypoint-initdb.d
+  pgadmin:
+    image: dpage/pgadmin4
     container_name: pma
-    links:
-      - db
     environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
-      PMA_ARBITRARY: 1
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: renaido
     restart: always
     ports:
       - 8081:80
