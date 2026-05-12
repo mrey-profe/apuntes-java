@@ -1,0 +1,3 @@
+DB_HOST=jdbc:postgresql://tu_servidor:5432/tu_bd
+DB_USER=tu_usuario
+DB_PASS=tu_contraseña
