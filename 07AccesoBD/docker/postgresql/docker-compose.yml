@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    environment:
+      POSTGRES_PASSWORD: renaido
+      POSTGRES_DB: pruebas
+      POSTGRES_USER: usuario
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql
+      - ./bds:/docker-entrypoint-initdb.d
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pma
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: renaido
+    restart: always
+    ports:
+      - 8081:80
+volumes:
+  dbdata:
