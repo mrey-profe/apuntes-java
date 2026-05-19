@@ -8,6 +8,7 @@ tests-moodle/
 *.pdf
 !**/Presentacións/*.pdf
 !**/Presentacións/**/*.pdf
+sampledata.archive
 
 # IntelliJ / JetBrains
 **/.idea/
