@@ -1,0 +1,55 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: renaido
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  mongo-seed:
+    image: mongo:7
+    container_name: mongo-seed
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: "no"
+    volumes:
+      - ./bds:/data/bds:ro
+    entrypoint:
+      - bash
+      - "-c"
+      - >-
+        mongorestore
+        --uri=mongodb://admin:renaido@mongo:27017
+        --authenticationDatabase=admin
+        --archive=/data/bds/sampledata.archive
+        --drop
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    restart: unless-stopped
+    ports:
+      - "8082:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: renaido
+      ME_CONFIG_MONGODB_URL: mongodb://admin:renaido@mongo:27017/
+      ME_CONFIG_BASICAUTH_USERNAME: user
+      ME_CONFIG_BASICAUTH_PASSWORD: renaido
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:

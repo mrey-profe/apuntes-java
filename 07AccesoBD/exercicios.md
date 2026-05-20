@@ -32,3 +32,16 @@ Create a program that connects to the `netflix.sql` database and:
 You must use prepared and parameterized queries.
 
 Create a DAO class containing the necessary methods to perform the requested operations. Each method must open and close the connection and return the results in whatever data structures you consider appropriate.
+
+## MongoDB — sample_mflix
+
+### Exercise 3
+
+Create a program that connects to the `sample_mflix` MongoDB database (collection `movies`) and:
+
+- Asks the user for a year and lists all movies released that year, showing title, runtime, rating (`rated`) and plot.
+- Adds a new movie, asking the user for: title, year, runtime, plot, and type. Inserts the document into the collection.
+- Updates the `rated` field of a movie: asks the user for a title and a new rating value, and updates all matching documents. Reports how many documents were modified.
+- Deletes a movie by title. If no document with that title exists, displays an error.
+
+Create a DAO class containing the necessary methods to perform the requested operations.
